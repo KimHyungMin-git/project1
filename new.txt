@@ -1,0 +1,4 @@
+Name:skymaster  Brand:Citizen    Size:40mm     Gender:Man      Price($):300      Stock:15       sale:0 Percent
+Name:seadweller Brand:Rolex      Size:42mm     Gender:Man      Price($):13000    Stock:15       sale:0 Percent
+Name:prince     Brand:iwc        Size:39mm     Gender:Man      Price($):8000     Stock:15       sale:0 Percent
+Name:hudson     Brand:mean       Size:39mm     Gender:Man      Price($):800      Stock:20       sale:0 Percent
