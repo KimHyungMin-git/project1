@@ -1,2 +1,0 @@
-Name:fly        Brand:soon       Size:38mm     Gender:Man      Price($):300      Stock:15       sale:0 Percent
-Name:ko         Brand:soon       Size:42mm     Gender:Man      Price($):400      Stock:20       sale:0 Percent
