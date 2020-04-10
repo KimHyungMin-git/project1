@@ -1,5 +1,4 @@
-
-#include "product.h"
+nclude "product.h"
 W_Record* product[MAX_PRODUCTS]; // 회원정보데이터 (전역)
 int _count = 0;
 
@@ -229,10 +228,6 @@ void w_record_op(){
     }
 }    //레코드 최적화 시키기
 void w_apply_sale(W_Record *p,int sa){
-    if(w_getsale>0){
-        p->price=p->price/(1-0.01*p->sale);
-    }
-    p->price=p->price*(1-0.01*sa);
     p->sale=sa;
 }   //할인률 적용하기
 char* w_getname(W_Record* p){
@@ -255,4 +250,4 @@ int w_getstock(W_Record* p){
 }  // 특정 시계 정보 레코드의 재고 가져오기
 int w_getsale(W_Record *p){
     return p->sale;
-}  //특정 시계 세일율 가져오기include "product.h"
+}  //특정 시계 세일율 가져오기

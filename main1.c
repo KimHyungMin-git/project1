@@ -116,6 +116,7 @@ printf("Brand: %s\n",w_getbrname(records));
 printf("Size: %s\n",w_getsize(records));
 printf("Gender: %s\n",w_getgender(records));
 printf("Price: %.f$\n",w_getprice(records));
+printf("SalePrice: %.f$\n",w_getprice(records)*(1-(float)w_getsale(records)/100));
 printf("Stock: %d\n",w_getstock(records));
 printf("Sale: %d Percent\n",w_getsale(records));
 }
@@ -183,7 +184,7 @@ else {
         W_Record* p = records[i];
 
 
-	printf("%d. Brand:%-10s Name:%-10s Size:%-8s Gender:%-8s Price($):%-8.f Stock:%-8d sale:%d Percent\n",i+1, p->brname, p->name, p->size, p->gender, p->price,p->stock,p->sale);   
+	printf("%d. Brand:%-10s Name:%-10s Size:%-8s Gender:%-8s Price($):%-8.f SalePrice($):%-8.f Stock:%-8d sale:%d Percent\n",i+1, p->brname, p->name, p->size, p->gender, p->price,p->price*(1-(float)p->sale/100),p->stock,p->sale);   
  }
     }
     void showall_record(){
@@ -210,7 +211,7 @@ else {
         for(i=0; i<c; i++){
             W_Record* p = record[i];
        
-	printf("%d. Brand:%-10s Name:%-10s Size:%-8s Gender:%-8s Price($):%-8.f Stock:%-8d sale:%d Percent\n",i+1, p->brname, p->name, p->size, p->gender, p->price,p->stock,p->sale);   
+	printf("%d. Brand:%-10s Name:%-10s Size:%-8s Gender:%-8s Price($):%-8.f SalePrice($):%-8.f Stock:%-8d sale:%d Percent\n",i+1, p->brname, p->name, p->size, p->gender, p->price,p->price*(1-(float)p->sale/100),p->stock,p->sale);   
 
  }
     }
@@ -235,8 +236,8 @@ else {
         else{
         for(i=0; i<c; i++){
             W_Record* p = record[i];
-       
-	printf("%d. Brand:%-10s Name:%-10s Size:%-8s Gender:%-8s Price($):%-8.f Stock:%-8d sale:%d Percent\n",i+1, p->brname, p->name, p->size, p->gender, p->price,p->stock,p->sale);   
+    
+	printf("%d. Brand:%-10s Name:%-10s Size:%-8s Gender:%-8s Price($):%-8.f SalePrice($):%-8.f Stock:%-8d sale:%d Percent\n",i+1, p->brname, p->name, p->size, p->gender, p->price,p->price*(1-(float)p->sale/100),p->stock,p->sale);   
 
  }
     }
@@ -280,12 +281,11 @@ if(records==NULL){
         per=w_getsale(records);
         printf("%s's price is %.f\n",name,w_getprice(records));
         if(per!=0){
-            printf("%d Percent is applyed(pixed price is %.f)\n",per,w_getprice(records)/(1-0.01*per));
+            printf("%d Percent is applyed\n",per);
         }
         printf("How many percent do you apply?->");
         scanf("%d",&sale);
         w_apply_sale(records,sale);
         printf("Completed!\n");
     }
-    }
-
+}
